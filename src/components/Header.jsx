@@ -1,42 +1,43 @@
 import { Link, useNavigate } from "react-router-dom";
+
 import logo from "../assets/logoH.png";
+import { useUserStore } from "../store/userStore";
 
 function Header() {
-
   const navigate = useNavigate();
+  const user = useUserStore((state) => state.user);
+  const logout = useUserStore((state) => state.logout);
 
-  const handleGoToLogin = () => {
-    navigate('/login');
-  };
+  const handleGoToLogin = () => navigate('/login');
+  const handleGoToRegister = () => navigate('/register');
+  const handleLogout = () => logout();
 
-  const handleGotoRegister = () => {
-    navigate('/register');
-  };
+  console.log(user, 'Hola usuario')
 
   return (
     <nav style={styles.navBar}>
       <div style={styles.containerLogo}>
         <img src={logo} alt="logo" style={styles.logoImg} />
       </div>
+
       <div style={styles.containerLinks}>
         <ul style={styles.navLinks}>
-          <li>
-            <Link to="/">Inicio</Link>
-          </li>
-          <li>
-            <Link to="/foros">Foros</Link>
-          </li>
-          <li>
-          <Link to="/">Tienda</Link>
-          </li>
-          <li>
-          <Link to="/">Noticias</Link>
-          </li>
+          <li><Link to="/">Inicio</Link></li>
+          <li><Link to="/foros">Foros</Link></li>
+          <li><Link to="/">Tienda</Link></li>
+          <li><Link to="/">Noticias</Link></li>
         </ul>
       </div>
+
       <div style={styles.containerButton}>
-        <button style={styles.buttonLogin} onClick={handleGoToLogin}>Iniciar sesión</button>
-        <button style={styles.buttonRegister} onClick={handleGotoRegister}>Registro</button>
+        {user ? (
+          <button style={styles.buttonLogin} onClick={handleLogout}>Cerrar sesión</button>
+        ) : (
+          <>
+            <button style={styles.buttonLogin} onClick={handleGoToLogin}>Iniciar sesión</button>
+            <button style={styles.buttonRegister} onClick={handleGoToRegister}>Registro</button>
+          </>
+        )}
       </div>
     </nav>
   );
