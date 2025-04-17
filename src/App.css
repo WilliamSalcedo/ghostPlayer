@@ -1,0 +1,16 @@
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  nav a:hover {
+    color: #ff3cac;
+  }
+
+  body{
+    background: radial-gradient(circle at center, #1c1f1d 0%, #0e0f0e 80%);
+    overflow-x: hidden;
+  }
