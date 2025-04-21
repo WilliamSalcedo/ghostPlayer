@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useUserStore } from "../../store/userStore";
 import { useState } from "react";
+import { registerUser } from "../../fetcher/registerFetch";
 
 export const useRegister = () => {
   const {
@@ -19,19 +20,31 @@ export const useRegister = () => {
   const setUser = useUserStore((state) => state.setUser);
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     if (data.password !== data.confirmPassword) {
       alert("Las contraseñas no coinciden");
       return;
     }
 
-    setUser({
-      name: data.username,
-      email: data.email,
-      favoriteConsole: data.favoriteConsole,
-    });
+    try {
+      const res = await registerUser({
+        username: data.username,
+        email: data.email,
+        password: data.password,
+        favoriteConsole: data.favoriteConsole,
+      });
 
-    navigate("/");
+      setUser({
+        name: data.username,
+        email: data.email,
+        favoriteConsole: data.favoriteConsole,
+      });
+
+      alert(res.message);
+      navigate("/");
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return {
