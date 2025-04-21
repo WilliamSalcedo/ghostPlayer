@@ -2,12 +2,15 @@
 // import card2 from "../assets/card2";
 // import card3 from "../assets/card3";
 import control from "../assets/controls.png"
+import { useUserStore } from "../store/userStore";
 
 
 function GridCard(){
+    const user = useUserStore((state) => state.user);
     return(
     <div style={styles.principalCard}>
         <div style={styles.leftCard}>
+            <h1 style={styles.tittle}> Bienvenido {user?.name}</h1>
             <h1 style={styles.tittle}>TU COMUNIDAD GAMER EN UN SOLO LUGAR</h1>
             <h4 style={styles.text}>Un foro de discución y una tienda para todos tus juegos y accesorios de consola.</h4>
         <div style={styles.button}>
