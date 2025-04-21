@@ -1,6 +1,3 @@
-// import card1 from "../assets/card1";
-// import card2 from "../assets/card2";
-// import card3 from "../assets/card3";
 import control from "../assets/controls.png"
 import { useUserStore } from "../store/userStore";
 
