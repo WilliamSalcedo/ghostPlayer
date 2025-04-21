@@ -10,7 +10,7 @@ function GridCard(){
     return(
     <div style={styles.principalCard}>
         <div style={styles.leftCard}>
-            <h1 style={styles.tittle}> Bienvenido {user.name}</h1>
+            <h1 style={styles.tittle}> Bienvenido {user?.name}</h1>
             <h1 style={styles.tittle}>TU COMUNIDAD GAMER EN UN SOLO LUGAR</h1>
             <h4 style={styles.text}>Un foro de discución y una tienda para todos tus juegos y accesorios de consola.</h4>
         <div style={styles.button}>
