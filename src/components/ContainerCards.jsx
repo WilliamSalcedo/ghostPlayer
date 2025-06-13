@@ -5,6 +5,7 @@ import GameCard from "./GameCards";
 import cardGT from "../assets/granTurismo.png";
 
 const ContainerCards = () => {
+
   return (
     <>
       <h3 style={styles.title}>Juegos destacados</h3>
@@ -14,7 +15,9 @@ const ContainerCards = () => {
         <GameCard image={cardGT} alt={"GranTurimo"} onClick={() => {}} />
         <GameCard image={cardHalo} alt={"halo"} onClick={() => {}} />
         <GameCard image={cardKratos} alt={"kratos"} onClick={() => {}} />
-        <GameCard image={cardGT} alt={"GranTurimo"} onClick={() => {console.log("hola")}} />
+        <GameCard image={cardGT} alt={"GranTurimo"} onClick={() => {}} />
+          <GameCard image={cardHalo} alt={"halo"} onClick={() => {}} />
+        <GameCard image={cardKratos} alt={"kratos"} onClick={() => {}} />
       </div>
     </>
   );
