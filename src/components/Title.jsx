@@ -1,27 +1,30 @@
+import { useNavigate } from "react-router-dom";
 import control from "../assets/controls.png"
 import { useUserStore } from "../store/userStore";
 
 
-function GridCard(){
+function Title(){
+    const navigate = useNavigate();
+    const handleGoToForos = () => navigate('/foros');
     const user = useUserStore((state) => state.user);
     return(
     <div style={styles.principalCard}>
-        <div style={styles.leftCard}>
+         <div style={styles.leftCard}>
             <h1 style={styles.tittle}> Bienvenido {user?.name}</h1>
             <h1 style={styles.tittle}>TU COMUNIDAD GAMER EN UN SOLO LUGAR</h1>
             <h4 style={styles.text}>Un foro de discución y una tienda para todos tus juegos y accesorios de consola.</h4>
         <div style={styles.button}>
-            <button style={styles.buttonForo}>Unirse al foro</button>
+            <button style={styles.buttonForo} onClick={handleGoToForos}>Unirse al foro</button>
             <button style={styles.buttonTienda}>Tienda</button>
         </div>
         </div>
         <div style={styles.rightCard}>
           <img src={control} alt="control" style={styles.control} />
-        </div>
+        </div> 
     </div>
     );
 }
- export default GridCard;
+ export default Title;
 
 
  const styles = {
