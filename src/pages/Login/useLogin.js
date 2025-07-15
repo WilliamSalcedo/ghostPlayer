@@ -19,9 +19,8 @@ export const useLogin = () => {
     try {
       const res = await loginUser(data);
 
-      setUser({
-        name: data.username,
-      });
+      setUser(res.user);
+      localStorage.setItem('user', JSON.stringify(res.user));
 
       console.log(res, 'respuesta del proceso')
       console.log("Usuario autenticado:", res);
