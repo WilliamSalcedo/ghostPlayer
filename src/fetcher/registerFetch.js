@@ -1,6 +1,6 @@
 export const registerUser = async ({ username, email, password, favoriteConsole }) => {
     try {
-      const response = await fetch("http://localhost:3012/auth/register", {
+      const response = await fetch("http://localhost:3013/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
