@@ -16,7 +16,7 @@ const ContainerCards = () => {
         <GameCard image={cardHalo} alt={"halo"} onClick={() => {}} />
         <GameCard image={cardKratos} alt={"kratos"} onClick={() => {}} />
         <GameCard image={cardGT} alt={"GranTurimo"} onClick={() => {}} />
-          <GameCard image={cardHalo} alt={"halo"} onClick={() => {}} />
+        <GameCard image={cardHalo} alt={"halo"} onClick={() => {}} />
         <GameCard image={cardKratos} alt={"kratos"} onClick={() => {}} />
       </div>
     </>
@@ -38,5 +38,6 @@ const styles = {
     gap: "1.5rem",
     justifyContent: "flex-start",
     paddingLeft: "30px",
+    marginBottom: "10%",
   },
 };

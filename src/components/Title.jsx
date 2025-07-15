@@ -65,6 +65,7 @@ function Title(){
         display: "flex",
         justifyContent: "center",
         gap: "1rem",
+        marginTop: 30,
 
     },
     buttonForo: {

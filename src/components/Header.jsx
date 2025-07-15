@@ -8,11 +8,11 @@ function Header() {
   const user = useUserStore((state) => state.user);
   const logout = useUserStore((state) => state.logout);
 
-  const handleGoToLogin = () => navigate('/login');
-  const handleGoToRegister = () => navigate('/register');
+  const handleGoToLogin = () => navigate("/login");
+  const handleGoToRegister = () => navigate("/register");
   const handleLogout = () => logout();
 
-  console.log(user, 'Hola usuario')
+  console.log(user, "Hola usuario");
 
   return (
     <nav style={styles.navBar}>
@@ -22,20 +22,36 @@ function Header() {
 
       <div style={styles.containerLinks}>
         <ul style={styles.navLinks}>
-          <li><Link to="/">Inicio</Link></li>
-          <li><Link to="/foros">Foros</Link></li>
-          <li><Link to="/">Tienda</Link></li>
-          <li><Link to="/">Noticias</Link></li>
+          <li>
+            <Link to="/">Inicio</Link>
+          </li>
+          <li>
+            <Link to="/foros">Foros</Link>
+          </li>
+          <li>
+            <Link to="/about">Acerca de nosotros</Link>
+          </li>
+          {user && (
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+          )}
         </ul>
       </div>
 
       <div style={styles.containerButton}>
         {user ? (
-          <button style={styles.buttonLogin} onClick={handleLogout}>Cerrar sesión</button>
+          <button style={styles.buttonLogin} onClick={handleLogout}>
+            Cerrar sesión
+          </button>
         ) : (
           <>
-            <button style={styles.buttonLogin} onClick={handleGoToLogin}>Iniciar sesión</button>
-            <button style={styles.buttonRegister} onClick={handleGoToRegister}>Registro</button>
+            <button style={styles.buttonLogin} onClick={handleGoToLogin}>
+              Iniciar sesión
+            </button>
+            <button style={styles.buttonRegister} onClick={handleGoToRegister}>
+              Registro
+            </button>
           </>
         )}
       </div>
@@ -84,7 +100,7 @@ const styles = {
     justifyContent: "center",
   },
   buttonLogin: {
-    background: "linear-gradient(145deg, #1a1a1a, #2a2a2a)", 
+    background: "linear-gradient(145deg, #1a1a1a, #2a2a2a)",
     color: "white",
     border: "2px solid #00f0ff",
     borderRadius: "8px",
