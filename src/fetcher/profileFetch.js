@@ -1,6 +1,6 @@
 export const getUserProfile = async (username) => {
   try {
-    const response = await fetch(`http://localhost:3013/auth/profile/${username}`, {
+    const response = await fetch(`https://ghostplaybackend.onrender.com/auth/login/auth/profile/${username}`, {
       method: "GET",
     });
 
