@@ -1,0 +1,5 @@
+/* Importar todos los estilos */
+@import './styles/globals.css';
+@import './styles/components.css';
+@import './styles/layout.css';
+@import './styles/pages.css';

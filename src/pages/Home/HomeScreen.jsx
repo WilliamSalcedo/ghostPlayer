@@ -1,14 +1,16 @@
 import ContainerCards from "../../components/ContainerCards";
+import Footer from "../../components/Footer";
 import GameCard from "../../components/GameCards";
-import GridCard from "../../components/GridCard";
 import Header from "../../components/Header";
+import Title from "../../components/Title";
 
 const HomeScreen = () => {
   return (
     <>
       <Header/>
-      <GridCard/>
+      <Title/>
       <ContainerCards />
+      <Footer/>
     </>
   );
 };
