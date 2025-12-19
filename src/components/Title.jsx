@@ -15,7 +15,7 @@ function Title(){
             <h4 style={styles.text}>Un foro de discución y una tienda para todos tus juegos y accesorios de consola.</h4>
         <div style={styles.button}>
             <button style={styles.buttonForo} onClick={handleGoToForos}>Unirse al foro</button>
-            <button style={styles.buttonTienda}>Tienda</button>
+            {/* <button style={styles.buttonTienda}>Tienda</button> */}
         </div>
         </div>
         <div style={styles.rightCard}>
