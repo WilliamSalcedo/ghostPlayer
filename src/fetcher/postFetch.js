@@ -1,14 +1,14 @@
-const API_BASE_URL = 'http://localhost:3013';
+const API_BASE_URL = 'https://ghostplaybackend.onrender.com';
 
-// Helper function to handle fetch errors
+
 const handleFetchError = (error) => {
   if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
-    throw new Error('No se puede conectar al servidor. Asegúrate de que el backend esté ejecutándose en http://localhost:3013');
+    throw new Error('No se puede conectar al servidor. Asegúrate de que el backend esté ejecutándose.');
   }
   throw error;
 };
 
-// Posts
+
 export const getAllPosts = async (filters = {}) => {
   const params = new URLSearchParams();
   if (filters.category) params.append('category', filters.category);
